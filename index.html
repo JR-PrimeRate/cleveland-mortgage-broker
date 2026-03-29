@@ -555,7 +555,7 @@ a:hover { color: var(--copper-bright); }
       <div>
         <div class="hero-eyebrow reveal">Ohio Mortgage Broker</div>
         <h1 class="reveal">Multiple lenders.<br>One application.</h1>
-        <p class="hero-sub reveal">I'm Justin Reeder — a mortgage broker at Certified Home Loans. I shop your loan across multiple wholesale lenders so you're not stuck with whatever one bank decides to offer. I'm in Parma, south of Cleveland, but most of this happens over phone and email anyway. If you're anywhere in Ohio, I can help.</p>
+        <p class="hero-sub reveal">I'm Justin Reeder — a mortgage loan originator at Certified Home Loans LLC. I work with multiple wholesale lenders so you can compare your options instead of settling for whatever one bank offers. Based in Parma, serving all of Ohio.</p>
         <div class="hero-actions reveal">
           <a href="#contact" class="btn-main">Get Pre-Approved <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4.5 12h15m0 0l-6-6m6 6l-6 6"/></svg></a>
           <a href="#faq" class="btn-ghost">Common questions <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></a>
@@ -840,7 +840,7 @@ async function fetchRates() {
     document.getElementById('rateNewsContent').innerHTML = '<p style="font-size:0.83rem;color:var(--text-dim);font-weight:300;margin:0">Latest at <a href="https://www.mortgagenewsdaily.com/mortgage-rates" target="_blank">MortgageNewsDaily.com</a></p>';
   }
   try {
-    const r = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://www.mortgagenewsdaily.com/mortgage-rates'));
+    const r = await fetch('/api/rates');
     if (r.ok) {
       const html = await r.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
